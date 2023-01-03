@@ -21,12 +21,16 @@ message ClientListItem {
   google.protobuf.Int32Value total_deposits = 5;
   // Amount of all client deposits
   google.type.Decimal total_deposits_amount = 6;
+  // Average rate of all client deposits
+  google.type.Decimal avg_deposits_rate = 7;
   // Total number of client loans
-  google.protobuf.Int32Value total_loans = 7;
+  google.protobuf.Int32Value total_loans = 8;
   // Amount of all client loans
-  google.type.Decimal total_loans_amount = 8;
+  google.type.Decimal total_loans_amount = 9;
+  // Average rate of all client loans
+  google.type.Decimal avg_loans_rate = 10;
   // Total number of client transfers
-  google.protobuf.Int32Value total_transfers = 9;
+  google.protobuf.Int32Value total_transfers = 11;
   // Amount of all client transfers
-  google.type.Decimal total_transfers_amount = 10;
+  google.type.Decimal total_transfers_amount = 12;
 }

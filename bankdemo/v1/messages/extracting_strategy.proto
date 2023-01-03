@@ -12,12 +12,12 @@ enum ExtractingStrategy {
   EXTRACTING_STRATEGY_EAGER = 2;
   // Extract by batch
   EXTRACTING_STRATEGY_BATCH = 3;
-  // Extract with cartesian problem
-  EXTRACTING_STRATEGY_CARTESIAN = 4;
-  // Extract query with subselects
-  EXTRACTING_STRATEGY_CARTESIAN_SUBSELECT = 5;
+  // Extract with the help of criteria api
+  EXTRACTING_STRATEGY_CRITERIA = 4;
   // Lazy extraction with entity graph
-  EXTRACTING_STRATEGY_ENTITY_GRAPH = 6;
+  EXTRACTING_STRATEGY_ENTITY_GRAPH = 5;
   // Lazy extraction with entity graph pageable
-  EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE = 7;
+  EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE = 6;
+  // Lazy extraction with entity graph pageable except some fields
+  EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE_SKIP_FIELDS = 7;
 }
