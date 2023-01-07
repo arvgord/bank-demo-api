@@ -1,3 +1,6 @@
 build/
 .idea
 .gradle
+npm-package/bankdemo
+npm-package/node_modules
+npm-package/package-lock.json
