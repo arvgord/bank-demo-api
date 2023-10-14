@@ -13,5 +13,10 @@ jobs:
         with:
           java-version: '8'
           distribution: 'corretto'
+      - name: Run protolock status step if .protolock exists
+        run: |
+          if [ -f .protolock ]; then
+            ./protolock/protolock status
+          fi
       - name: Build packages
         run: ./gradlew buildAndCopy
