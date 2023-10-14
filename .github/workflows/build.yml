@@ -15,8 +15,9 @@ jobs:
           distribution: 'corretto'
       - name: Run protolock status step if .protolock exists
         run: |
-          if [ -f .protolock ]; then
-            ./protolock/protolock status
+          if [ -f proto.lock ]; then
+            echo "protolock status check"
+            ./protolock/protolock status --protoroot=./bankdemo/
           fi
       - name: Build packages
         run: ./gradlew buildAndCopy
