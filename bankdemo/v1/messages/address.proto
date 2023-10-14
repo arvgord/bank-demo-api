@@ -1,4 +1,4 @@
-syntax = 'proto3';
+syntax = "proto3";
 
 package com.arvgord.api.grpc.bankdemo.v1;
 
@@ -12,5 +12,8 @@ message Address {
   google.protobuf.StringValue street = 2;
   // Client house
   google.protobuf.StringValue house = 3;
-  google.protobuf.StringValue postal_code = 4;
+  // Client flat
+  google.protobuf.StringValue flat = 4;
+  // Client postal code
+  google.protobuf.StringValue postal_code = 5;
 }
