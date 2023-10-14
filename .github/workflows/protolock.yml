@@ -25,5 +25,5 @@ jobs:
         with:
           author_name: GitHub Action
           author_email: action@github.com
-          message: 'Update .protolock file'
-          add: '.protolock'
+          message: 'Update proto.lock file'
+          add: proto.lock
