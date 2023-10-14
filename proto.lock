@@ -98,6 +98,11 @@
                 "id": 4,
                 "name": "flat",
                 "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 5,
+                "name": "postal_code",
+                "type": "google.protobuf.StringValue"
               }
             ]
           }
