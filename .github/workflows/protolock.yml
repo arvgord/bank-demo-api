@@ -17,7 +17,7 @@ jobs:
             ./protolock/protolock init
           fi
       - name: Run protolock status
-        run: ./protolock/protolock status
+        run: ./protolock/protolock status --strict
       - name: Update .protolock file
         run: ./protolock/protolock commit
       - name: Commit changes
