@@ -1,6 +1,6 @@
 {
   "name": "@arvgord/bank-demo-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generated typescript files for gRPC-web bank-demo-client application",
   "repository": {
     "type": "git",
