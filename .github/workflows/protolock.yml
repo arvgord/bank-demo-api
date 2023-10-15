@@ -14,12 +14,12 @@ jobs:
       - name: Initialize protolock if needed
         run: |
           if [ ! -f proto.lock ]; then
-            ./protolock/protolock init --protoroot=./bankdemo/
+            ./tools/protolock init --protoroot=./bankdemo/
           fi
       - name: Run protolock status
-        run: ./protolock/protolock status --protoroot=./bankdemo/
-      - name: Update .protolock file
-        run: ./protolock/protolock commit --protoroot=./bankdemo/
+        run: ./tools/protolock status --protoroot=./bankdemo/
+      - name: Update proto.lock file
+        run: ./tools/protolock commit --protoroot=./bankdemo/
       - name: Commit changes
         uses: EndBug/add-and-commit@v9.1.3
         with:

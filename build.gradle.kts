@@ -35,10 +35,10 @@ protobuf {
             artifact = "io.grpc:protoc-gen-grpc-kotlin:${property("grpcKotlinVersion")}:jdk8@jar"
         }
         id("protoc-gen-js") {
-            path = projectDir.path.plus("/protoc-gen/protoc-gen-js-3.21.2-linux-x86_64")
+            path = projectDir.path.plus("/tools/protoc-gen-js-3.21.2-linux-x86_64")
         }
         id("protoc-gen-grpc-web") {
-            path = projectDir.path.plus("/protoc-gen/protoc-gen-grpc-web-1.4.2-linux-x86_64")
+            path = projectDir.path.plus("/tools/protoc-gen-grpc-web-1.4.2-linux-x86_64")
         }
     }
     generateProtoTasks {
@@ -95,12 +95,12 @@ tasks.register<Copy>("buildAndCopy") {
         projectDir.path.plus("/build/generated/source/proto/main/protoc-gen-js"),
         projectDir.path.plus("/build/generated/source/proto/main/protoc-gen-grpc-web")
     )
-    into(projectDir.path.plus("/npm-package/"))
+    into(projectDir.path.plus("/npm_package/"))
 }
 tasks.register<Delete>("cleanNpmDir") {
-    delete(projectDir.path.plus("/npm-package/bankdemo/"))
-    delete(projectDir.path.plus("/npm-package/node_modules/"))
-    delete(projectDir.path.plus("/npm-package/package-lock.json"))
+    delete(projectDir.path.plus("/npm_package/bankdemo/"))
+    delete(projectDir.path.plus("/npm_package/node_modules/"))
+    delete(projectDir.path.plus("/npm_package/package-lock.json"))
 }
 tasks["buildAndCopy"].dependsOn("build")
 tasks["clean"].dependsOn("cleanNpmDir")

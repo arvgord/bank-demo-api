@@ -13,7 +13,7 @@ jobs:
           distribution: 'corretto'
       - name: Build packages
         run: ./gradlew buildAndCopy --stacktrace
-      - name: Publish Kotlin gRPC api
+      - name: Publish Kotlin gRPC API
         run: ./gradlew publish --stacktrace
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,9 +24,9 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@arvgord'
       - run: npm i
-        working-directory: ./npm-package
-      - name: Publish Typescript gRPC api
+        working-directory: ./npm_package
+      - name: Publish Typescript gRPC API
         run: npm publish
-        working-directory: ./npm-package
+        working-directory: ./npm_package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

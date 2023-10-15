@@ -13,11 +13,11 @@ jobs:
         with:
           java-version: '8'
           distribution: 'corretto'
-      - name: Run protolock status step if .protolock exists
+      - name: Run protolock status step if proto.lock file exists
         run: |
           if [ -f proto.lock ]; then
             echo "protolock status check"
-            ./protolock/protolock status --protoroot=./bankdemo/
+            ./tools/protolock status --protoroot=./bankdemo/
           fi
       - name: Build packages
         run: ./gradlew buildAndCopy
