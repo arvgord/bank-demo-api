@@ -6,8 +6,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.3.0
-      - uses: actions/setup-java@v3.8.0
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v3.13.0
         with:
           java-version: '8'
           distribution: 'corretto'
@@ -16,8 +16,7 @@ jobs:
       - name: Publish Kotlin gRPC API
         run: ./gradlew publish --stacktrace
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
