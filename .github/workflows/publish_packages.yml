@@ -22,10 +22,10 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@arvgord'
-      - run: npm i
-        working-directory: ./npm_package
-      - name: Publish Typescript gRPC API
-        run: npm publish
-        working-directory: ./npm_package
+      - name: Publish bank-demo-client gRPC API
+        run: |
+          cd ./npm_package
+          npm i
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
