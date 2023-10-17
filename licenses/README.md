@@ -6,7 +6,7 @@ This folder contains licenses for third-party software and libraries used in thi
 
 ## protolock
 
-**Path**: `./tools/protolock`
+**Path**: `/bank-demo-api/tools/protolock`
 
 **License**: BSD 3-Clause License
 
@@ -16,7 +16,7 @@ This folder contains licenses for third-party software and libraries used in thi
 
 ## grpc-web
 
-**Path**: `./tools/protoc-gen-grpc-web-1.4.2-linux-x86_64`
+**Path**: `/bank-demo-api/tools/protoc-gen-grpc-web-1.4.2-linux-x86_64`
 
 **License**: Apache License Version 2.0
 
@@ -25,7 +25,7 @@ This folder contains licenses for third-party software and libraries used in thi
 ---
 ## protobuf-javascript
 
-**Path**: `./tools/protoc-gen-js-3.21.2-linux-x86_64`
+**Path**: `/bank-demo-api/tools/protoc-gen-js-3.21.2-linux-x86_64`
 
 **License**: BSD 3-Clause License, Apache License Version 2.0
 
