@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.arvgord.api.grpc.bankdemo.v2;
+
+import "google/protobuf/wrappers.proto";
+
+// Page
+message PageRequest {
+  // Number of clients on page
+  google.protobuf.Int32Value page = 1;
+  // Page size
+  google.protobuf.Int32Value size = 2;
+}
