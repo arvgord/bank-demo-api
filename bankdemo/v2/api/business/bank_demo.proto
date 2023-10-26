@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.arvgord.api.grpc.bankdemo.v2;
+
+import "bankdemo/v2/messages/client_list_item.proto";
+import "bankdemo/v2/messages/extracting_strategy.proto";
+import "bankdemo/v2/messages/page_request.proto";
+import "google/protobuf/wrappers.proto";
+
+// Get client list request
+message GetClientListRequest {
+  // Current page
+  PageRequest page_request = 1;
+  // Extracting strategy
+  ExtractingStrategy extracting_strategy = 2;
+}
+
+// Get client list response
+message GetClientListResponse {
+  // Clients
+  repeated ClientListItem clients = 1;
+  // Total number of clients
+  google.protobuf.Int64Value total_clients = 2;
+  // Total number of pages
+  google.protobuf.Int32Value total_pages = 3;
+}
+
+// Service BankDemo
+service BankDemo {
+  // Get client list
+  rpc GetClientList(GetClientListRequest) returns (GetClientListResponse);
+}

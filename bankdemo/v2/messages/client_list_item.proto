@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.arvgord.api.grpc.bankdemo.v2;
+
+import "bankdemo/v2/messages/address.proto";
+import "bankdemo/v2/messages/client_name.proto";
+import "google/protobuf/wrappers.proto";
+
+// Message with client info
+message ClientListItem {
+  // Client name
+  ClientName client_name = 1;
+  // Client address
+  Address client_address = 2;
+  // Total number of client accounts
+  google.protobuf.Int32Value total_accounts = 3;
+  // Balance on all client accounts
+  google.protobuf.StringValue total_accounts_balance = 4;
+  // Total number of client deposits
+  google.protobuf.Int32Value total_deposits = 5;
+  // Amount of all client deposits
+  google.protobuf.StringValue total_deposits_amount = 6;
+  // Average rate of all client deposits
+  google.protobuf.StringValue avg_deposits_rate = 7;
+  // Total number of client loans
+  google.protobuf.Int32Value total_loans = 8;
+  // Amount of all client loans
+  google.protobuf.StringValue total_loans_amount = 9;
+  // Average rate of all client loans
+  google.protobuf.StringValue avg_loans_rate = 10;
+  // Total number of client transfers
+  google.protobuf.Int32Value total_transfers = 11;
+  // Amount of all client transfers
+  google.protobuf.StringValue total_transfers_amount = 12;
+}
