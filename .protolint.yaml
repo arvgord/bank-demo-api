@@ -1,11 +1,7 @@
 lint:
   rules:
     all_default: true
-    remove:
-      - FILE_HAS_COMMENT
   rules_option:
-    max_line_length:
-      max_chars: 120
     field_names_exclude_prepositions:
       excludes:
         - date_from
