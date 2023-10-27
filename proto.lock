@@ -48,7 +48,13 @@
               {
                 "name": "GetClientList",
                 "in_type": "GetClientListRequest",
-                "out_type": "GetClientListResponse"
+                "out_type": "GetClientListResponse",
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               }
             ]
           }
@@ -311,6 +317,315 @@
         ],
         "package": {
           "name": "com.arvgord.api.grpc.bankdemo.v1"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:api:/:business:/:bank_demo.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "GetClientListRequest",
+            "fields": [
+              {
+                "id": 1,
+                "name": "page_request",
+                "type": "PageRequest"
+              },
+              {
+                "id": 2,
+                "name": "extracting_strategy",
+                "type": "ExtractingStrategy"
+              }
+            ]
+          },
+          {
+            "name": "GetClientListResponse",
+            "fields": [
+              {
+                "id": 1,
+                "name": "clients",
+                "type": "ClientListItem",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "total_clients",
+                "type": "google.protobuf.Int64Value"
+              },
+              {
+                "id": 3,
+                "name": "total_pages",
+                "type": "google.protobuf.Int32Value"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "name": "BankDemo",
+            "rpcs": [
+              {
+                "name": "GetClientList",
+                "in_type": "GetClientListRequest",
+                "out_type": "GetClientListResponse"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "bankdemo/v2/messages/client_list_item.proto"
+          },
+          {
+            "path": "bankdemo/v2/messages/extracting_strategy.proto"
+          },
+          {
+            "path": "bankdemo/v2/messages/page_request.proto"
+          },
+          {
+            "path": "google/protobuf/wrappers.proto"
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:messages:/:address.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Address",
+            "fields": [
+              {
+                "id": 1,
+                "name": "city",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 2,
+                "name": "street",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 3,
+                "name": "house",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 4,
+                "name": "postal_code",
+                "type": "google.protobuf.StringValue"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/wrappers.proto"
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:messages:/:client_list_item.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "ClientListItem",
+            "fields": [
+              {
+                "id": 1,
+                "name": "client_name",
+                "type": "ClientName"
+              },
+              {
+                "id": 2,
+                "name": "client_address",
+                "type": "Address"
+              },
+              {
+                "id": 3,
+                "name": "total_accounts",
+                "type": "google.protobuf.Int32Value"
+              },
+              {
+                "id": 4,
+                "name": "total_accounts_balance",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 5,
+                "name": "total_deposits",
+                "type": "google.protobuf.Int32Value"
+              },
+              {
+                "id": 6,
+                "name": "total_deposits_amount",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 7,
+                "name": "avg_deposits_rate",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 8,
+                "name": "total_loans",
+                "type": "google.protobuf.Int32Value"
+              },
+              {
+                "id": 9,
+                "name": "total_loans_amount",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 10,
+                "name": "avg_loans_rate",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 11,
+                "name": "total_transfers",
+                "type": "google.protobuf.Int32Value"
+              },
+              {
+                "id": 12,
+                "name": "total_transfers_amount",
+                "type": "google.protobuf.StringValue"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "bankdemo/v2/messages/address.proto"
+          },
+          {
+            "path": "bankdemo/v2/messages/client_name.proto"
+          },
+          {
+            "path": "google/protobuf/wrappers.proto"
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:messages:/:client_name.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "ClientName",
+            "fields": [
+              {
+                "id": 1,
+                "name": "first_name",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 2,
+                "name": "middle_name",
+                "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 3,
+                "name": "last_name",
+                "type": "google.protobuf.StringValue"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/wrappers.proto"
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:messages:/:extracting_strategy.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "ExtractingStrategy",
+            "enum_fields": [
+              {
+                "name": "EXTRACTING_STRATEGY_UNSPECIFIED"
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_LAZY",
+                "integer": 1
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_EAGER",
+                "integer": 2
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_BATCH",
+                "integer": 3
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_CRITERIA",
+                "integer": 4
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_ENTITY_GRAPH",
+                "integer": 5
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE",
+                "integer": 6
+              },
+              {
+                "name": "EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE_SKIP_FIELDS",
+                "integer": 7
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
+        }
+      }
+    },
+    {
+      "protopath": "v2:/:messages:/:page_request.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "PageRequest",
+            "fields": [
+              {
+                "id": 1,
+                "name": "page",
+                "type": "google.protobuf.Int32Value"
+              },
+              {
+                "id": 2,
+                "name": "size",
+                "type": "google.protobuf.Int32Value"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/wrappers.proto"
+          }
+        ],
+        "package": {
+          "name": "com.arvgord.api.grpc.bankdemo.v2"
         }
       }
     }
