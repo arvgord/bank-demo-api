@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package com.arvgord.api.grpc.bankdemo.v1;
+package com.arvgord.api.grpc.bankdemo.v2;
 
-import "bankdemo/v1/messages/client_list_item.proto";
-import "bankdemo/v1/messages/extracting_strategy.proto";
-import "bankdemo/v1/messages/page_request.proto";
+import "bankdemo/v2/messages/client_list_item.proto";
+import "bankdemo/v2/messages/extracting_strategy.proto";
+import "bankdemo/v2/messages/page_request.proto";
 import "google/protobuf/wrappers.proto";
 
 // Get client list request
@@ -28,7 +28,5 @@ message GetClientListResponse {
 // Service BankDemo
 service BankDemo {
   // Get client list
-  rpc GetClientList(GetClientListRequest) returns (GetClientListResponse) {
-    option deprecated = true;
-  };
+  rpc GetClientList(GetClientListRequest) returns (GetClientListResponse);
 }
