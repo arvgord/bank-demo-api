@@ -11,4 +11,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           level: error
-          protolint_flags: -config_path=.protolint.yaml ./bankdemo
