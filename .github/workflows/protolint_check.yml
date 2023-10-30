@@ -1,0 +1,16 @@
+name: Protolint Check
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Download protolint
+        run: |
+          wget https://github.com/yoheimuta/protolint/releases/download/v0.46.3/protolint_0.46.3_linux_amd64.tar.gz
+          tar -zxvf protolint_0.46.3_linux_amd64.tar.gz
+      - name: Run protolint
+        run: ./protolint ./bankdemo

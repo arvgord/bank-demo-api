@@ -11,17 +11,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Download protolock
+        run: |
+          wget https://github.com/nilslice/protolock/releases/download/v0.16.0/protolock.20220302T184110Z.linux-amd64.tgz
+          tar -zxvf protolock.20220302T184110Z.linux-amd64.tgz
       - name: Initialize protolock if needed
         run: |
           if [ ! -f proto.lock ]; then
-            ./tools/protolock init --protoroot=./bankdemo/
+            ./protolock init --protoroot=./bankdemo
           fi
       - name: Run protolock status
-        run: ./tools/protolock status --protoroot=./bankdemo/
+        run: ./protolock status --protoroot=./bankdemo
       - name: Update proto.lock file
-        run: ./tools/protolock commit --protoroot=./bankdemo/
+        run: ./protolock commit --protoroot=./bankdemo
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9.1.3
+        uses: EndBug/add-and-commit@v9
         with:
           author_name: GitHub Action
           author_email: action@github.com
