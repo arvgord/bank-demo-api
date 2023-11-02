@@ -16,4 +16,6 @@ message Address {
   google.protobuf.StringValue flat = 4;
   // Client postal code
   google.protobuf.StringValue postal_code = 5;
+  // Client phone number
+  google.protobuf.StringValue phoneNumber = 6;
 }
