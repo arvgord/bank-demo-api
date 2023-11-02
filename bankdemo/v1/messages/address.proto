@@ -14,4 +14,6 @@ message Address {
   google.protobuf.StringValue house = 3;
   // Client flat
   google.protobuf.StringValue flat = 4;
+  // Client postal code
+  google.protobuf.StringValue postal_code = 5;
 }
