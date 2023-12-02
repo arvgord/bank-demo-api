@@ -103,6 +103,11 @@
                 "id": 5,
                 "name": "postal_code",
                 "type": "google.protobuf.StringValue"
+              },
+              {
+                "id": 6,
+                "name": "phoneNumber",
+                "type": "google.protobuf.StringValue"
               }
             ]
           }
@@ -275,6 +280,10 @@
               {
                 "name": "EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE_SKIP_FIELDS",
                 "integer": 7
+              },
+              {
+                "name": "BATCH_SIZE",
+                "integer": 8
               }
             ]
           }

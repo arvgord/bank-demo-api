@@ -20,4 +20,6 @@ enum ExtractingStrategy {
   EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE = 6;
   // Lazy extraction with entity graph pageable except some fields
   EXTRACTING_STRATEGY_ENTITY_GRAPH_PAGEABLE_SKIP_FIELDS = 7;
+  // New strategy batch-size
+  BATCH_SIZE = 8;
 }
